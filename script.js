@@ -48,6 +48,9 @@ function float() {
 }
 
 function button(num) {
+  if (firstNum == "0" || secondNum == "0"){
+    return;
+  }
   if (firstNumSwitch) {
     if (secondNum.length <= 19) {
       secondNum += num;
@@ -63,8 +66,8 @@ function button(num) {
 
 function opType(opType) {
   if (firstNumSwitch) {
-    operator = opType;
     equal();
+    operator = opType;
   }
   operator = opType;
   firstNumSwitch = true;
@@ -131,9 +134,10 @@ function equal() {
       break;
   }
   secondNum = "";
-    if (("" + firstNum).length <= 19) {
-      screenEl.innerText = firstNum;
-    } else {
-      screenEl.innerText = firstNum.toFixed(19);
-    }
+  if ((""+firstNum).includes(".")){
+    screenEl.innerText = firstNum.toFixed(4);
+  }
+  else {
+    screenEl.innerText = firstNum;
+  }
 }
