@@ -5,7 +5,7 @@ let operator;
 let screenEl = document.getElementById("display");
 
 window.addEventListener("keydown", function (e) {
-  //keyboard
+  //keyboard input
   const key = document.querySelector(`button[data-key='${e.keyCode}']`);
   key.click();
 });
@@ -21,17 +21,26 @@ function clearAll() {
 
 function del() {
   if (firstNumSwitch) {
+    // delBasic(secondNum); 
     if (secondNum != "") {
       secondNum = secondNum.slice(0, secondNum.length - 1);
       screenEl.innerText = secondNum;
     }
     return;
   }
+  // delBasic(firstNum);
   if (firstNum != "") {
     firstNum = firstNum.slice(0, firstNum.length - 1);
     screenEl.innerText = firstNum;
   }
 }
+
+// function delBasic(currNum) {
+//   if (currNum != "") {
+//     currNum = currNum.slice(0, currNum.length - 1);
+//     screenEl.innerText = currNum;
+//   }
+// }
 
 function float() {
   if (firstNumSwitch) {
