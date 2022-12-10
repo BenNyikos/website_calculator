@@ -116,28 +116,33 @@ function equal() {
   if (secondNum == "") {
     return;
   }
-  if (operator == "/") {
-    if (secondNum == 0) {
-      clearAll();
-      screenEl.innerText = "thou art no more brain than stone";
-      return;
-    } else {
-      firstNum = Number(firstNum) / Number(secondNum);
-    }
-  } else if (operator == "*") {
-    firstNum = Number(firstNum) * Number(secondNum);
-  } else if (operator == "+") {
-    firstNum = Number(firstNum) + Number(secondNum);
-  } else if (operator == "-") {
-    firstNum = Number(firstNum) - Number(secondNum);
+  switch(operator){
+    case "/":
+      if (secondNum == 0) {
+        clearAll();
+        screenEl.innerText = "thou art no more brain than stone";
+        console.log("what?")
+        return;
+      } else {
+        firstNum = Number(firstNum) / Number(secondNum);
+      }
+      break;
+    case "*":
+      firstNum = Number(firstNum) * Number(secondNum);
+      break;
+    case "+":
+      firstNum = Number(firstNum) + Number(secondNum);
+      break;
+    case "-":
+      firstNum = Number(firstNum) - Number(secondNum);
+      break;
+    default:
+      break;
   }
-
   secondNum = "";
-  if (("" + firstNum).length <= 19) {
-    screenEl.innerText = firstNum;
-    console.log(firstNum.length);
-  } else {
-    screenEl.innerText = firstNum.toFixed(19);
-    console.log(firstNum.length);
-  }
+    if (("" + firstNum).length <= 19) {
+      screenEl.innerText = firstNum;
+    } else {
+      screenEl.innerText = firstNum.toFixed(19);
+    }
 }
