@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+  <title>Calculator</title>
+</head>
+<body>
+  <main>
+  <div id="calculator">
+    <div id="display">0</div>
+    <button id="clear" onclick="clearAll()">CE</button>
+    <button onclick="del()" data-key="8">DEL</button>
+    <button onclick="opType('/')">/</button>
+    <button onclick="button(7)" data-key="55">7</button>
+    <button onclick="button(8)" data-key="56">8</button>
+    <button onclick="button(9)" data-key="57">9</button>
+    <button onclick="opType('*')">*</button>
+    <button onclick="button(4)" data-key="52">4</button>
+    <button onclick="button(5)" data-key="53">5</button>
+    <button onclick="button(6)" data-key="54">6</button>
+    <button onclick="opType('+')">+</button>
+    <button onclick="button(1)" data-key="49">1</button>
+    <button onclick="button(2)" data-key="50">2</button>
+    <button onclick="button(3)" data-key="51">3</button>
+    <button onclick="opType('-')">-</button>
+    <button onclick="float()">.</button>
+    <button onclick="button(0)" data-key="48">0</button>
+    <button onclick="plusMinus()">+/-</button>
+    <button onclick="equal()" data-key="13">=</button>
+  </div>
+</main>
+</body>
+</html>
